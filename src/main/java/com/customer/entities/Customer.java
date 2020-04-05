@@ -8,12 +8,16 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "CUSTOMER")
 @ApiModel("Customers details")
+//@JsonIgnoreProperties(value= {"password"}) (Avoid hard coded approach)
 public class Customer {
 
 	@Id
@@ -39,6 +43,7 @@ public class Customer {
 	@NotNull
 	private String emailId;
 	@NotNull
+	@JsonIgnore
 	private String password;
 	
 	
