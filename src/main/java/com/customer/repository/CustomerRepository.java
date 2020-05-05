@@ -9,5 +9,5 @@ import com.customer.entities.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 	
-	
+	public Customer findByFirstName(String name);
 }

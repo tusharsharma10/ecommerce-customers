@@ -53,6 +53,27 @@ public class Customer {
 	public Customer() {
 	}
 	
+	
+	
+	
+	public Customer( @NotNull String firstName, @NotNull String lastName,
+			@Min(value = 2, message = "Value should be more than 2") Integer houseNum, String city, String country,
+			@NotNull Long phone, @NotNull String emailId, @NotNull String password) {
+		super();
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.houseNum = houseNum;
+		this.city = city;
+		this.country = country;
+		this.phone = phone;
+		this.emailId = emailId;
+		this.password = password;
+	}
+
+
+
+
 	public Long getCustomerId() {
 		return customerId;
 	}
