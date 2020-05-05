@@ -45,13 +45,6 @@ public class CustomerRestController {
 		System.out.println(c1.getLastName());
 	}
 	
-	@ExceptionHandler
-	public ResponseEntity<CustomerErrorResponse> handleException (CustomerNotFoundException c){
-		
-	CustomerErrorResponse error = new CustomerErrorResponse(HttpStatus.NOT_FOUND.value(), c.getMessage(), System.currentTimeMillis());
-		
-	return new ResponseEntity<CustomerErrorResponse>(error,HttpStatus.NOT_FOUND);
 	
-	}
 	
 }
