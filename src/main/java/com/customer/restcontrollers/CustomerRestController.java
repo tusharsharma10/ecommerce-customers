@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.customer.entities.Customer;
+import com.customer.events.CustomSpringEventPublisher;
 import com.customer.exception.CustomerErrorResponse;
 import com.customer.exception.CustomerNotFoundException;
 import com.customer.repository.CustomerRepository;
@@ -17,15 +18,17 @@ import com.customer.repository.CustomerRepository;
 public class CustomerRestController {
 
 	@Autowired CustomerRepository cRepo;
+	@Autowired CustomSpringEventPublisher publisher;
 	
 	@GetMapping("/store")
 	public void store() {
 		
 		System.out.println("Working...");
 		
-	Customer c1 = new Customer("Chota", "Ronaldo", 109, "Baroda", "India"
+	Customer c1 = new Customer("Richards", "Headley", 109, "Baroda", "India"
 			, Long.valueOf("441616464949"), "parthiv@gmail.com", "sadjaksjd");
 	
+	publisher.publishEvent("Richards Headley");
 			
 	cRepo.save(c1);
 		
