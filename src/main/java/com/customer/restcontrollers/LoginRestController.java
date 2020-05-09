@@ -23,9 +23,9 @@ public class LoginRestController {
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/hi")
-	public String store() {
+	public UserBean store() {
 		
-		return "Hello World";
+		return new UserBean("tushar", "ADMIN");
 		
 		
 	

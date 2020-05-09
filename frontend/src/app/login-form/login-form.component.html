@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-3 col-lg-6 col-md-3 ">
+            <form action="" class="form-group">
+                <h5 class="text-center">Login</h5>
+                <input type="text" class="form-control my-2" placeholder="Username" #username>
+                <input type="password" name="" id="" class="form-control my-2" placeholder="Password" #password>
+                <button type="button" class="btn  btn-danger mx-5 my-2">Cancel</button>
+                <button type="button" class="btn  btn-success mx-5 my-2" (click)="login(username.value,password.value)">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
